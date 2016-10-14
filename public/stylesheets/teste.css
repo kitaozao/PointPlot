@@ -1,0 +1,23 @@
+h1{
+    color: red;
+    text-align: center;
+}
+
+h2{
+    color: blue;
+    text-align:center;
+}
+
+.puta-quadrado-preto{
+
+    width:100%;
+    background-color:#AAAAAA;
+
+}
+
+.puta-quadrado-cinza{
+
+    width:100%;
+    background-color: #DDDDDD;
+    text-align: right;
+}
