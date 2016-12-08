@@ -92,6 +92,28 @@ function addMarkers(points,markers) {
     }
 }
 
+function changeType(markers) {
+    var marker=[];
+    for(var i=0; i<markers.length;i++ ) {
+        marker=markers[i];
+        if(iconbool==1) {
+            for(var j=0;j<5;j++){
+                if(marker[0]==j){
+                    marker[2].setIcon(imagens_gravidade[j]);
+                }
+            }
+
+        }else if (iconbool==0) {
+            for(var j=0;j<5;j++){
+                if(marker[1]==j){
+                    marker[2].setIcon(imagens_tipo[j]);
+                }
+
+            }
+        }
+    }
+}
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -147,24 +169,6 @@ function initMap() {
     }
 
     /**alteração de icone*/
-
-    for(var i=0; i<markers.length;i++ ) {
-        marker=markers[i];
-        if(iconbool==1) {
-            for(var j=0;j<5;j++){
-                if(marker[0]==j){
-                    marker[2].setIcon(imagens_gravidade[j]);
-                }
-            }
-
-        }else if (iconbool==0) {
-            for(var j=0;j<5;j++){
-                if(marker[1]==j){
-                    marker[2].setIcon(imagens_tipo[j]);
-                }
-
-            }
-        }
-    }
+    changeType(markers);
 
 }
