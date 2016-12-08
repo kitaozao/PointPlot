@@ -130,6 +130,9 @@ function initMap() {
         url:'/assets/images/Icons/Moto.png'
     }
     imagens_tipo[3]={
+        url:'/assets/images/Icons/Bicicleta.png'
+    }
+    imagens_tipo[4]={
         url:'/assets/images/Icons/Outros.png'
     }
 
@@ -155,7 +158,7 @@ function initMap() {
             }
 
         }else if (iconbool==0) {
-            for(var j=0;j<4;j++){
+            for(var j=0;j<5;j++){
                 if(marker[1]==j){
                     marker[2].setIcon(imagens_tipo[j]);
                 }
