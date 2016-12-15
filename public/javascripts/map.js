@@ -8,6 +8,7 @@ var imagens_tipo=[];
 var markers=[];
 var map;
 var iconbool=0;
+var dragbool=false;
 
 var Points = [
     [0,2,-24.971561, -53.454853],
@@ -115,6 +116,46 @@ function changeType(markers) {
 }
 
 
+
+
+function iconchange() {
+    if(iconbool==0){
+        iconbool=1;
+        changeType(markers);
+    }else if(iconbool==1){
+        iconbool=0;
+        changeType(markers);
+    }
+}
+
+
+function drag(markers) {
+    var marker=[];
+    for(var i=0; i<markers.length;i++ ) {
+        marker=markers[i];
+        if(dragbool==false) {
+            marker[2].setDraggable=true;
+        }else if (dragbool==true) {
+            marker[2].setDraggable=false;
+        }
+    }
+}
+
+
+
+
+function dragchange() {
+    if(dragbool==false){
+        dragbool=true;
+    }else if(dragbool==true){
+        dragbool=false;
+    }
+    drag(markers);
+}
+
+
+
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
@@ -136,7 +177,7 @@ function initMap() {
         url:'/assets/images/Icons/Grave.png'
     }
     imagens_gravidade[3]={
-        url:'/assets/images/Icons/leve.png'
+        url:'/assets/images/Icons/Leve.png'
     }
     imagens_gravidade[4]={
         url:'/assets/images/Icons/SemVitimas.png'
@@ -167,8 +208,4 @@ function initMap() {
         var marker=markers[i];
         marker[2].setMap(map);
     }
-
-    /**alteração de icone*/
-    changeType(markers);
-
-}
+ }
