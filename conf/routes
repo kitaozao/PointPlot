@@ -4,7 +4,8 @@
 
 # Home page
 GET     /                          controllers.Application.index
-POST    /ponto/salva               controllers.PointControler.salvaponto
+POST    /ponto/salva               controllers.PointControler.changes
+GET     /ponto/popula              controllers.PointControler.popula
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
